@@ -31,12 +31,12 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
 - Request:
     ```JSON
     {
-        "id": "99602837a596498c85e214afb3a6f484",
         "descricao": "Mercadinho Espaço da Carne",
         "usuario": "msc",
         "email": "msg@gmail.com",
         "telefone": "7522220000",
-        "whatsapp": "7599991111",
+        "whatsapp" : "7599991111",
+        "senha": "12345",
         "cep": "4444000",
         "endereco": "Rua São Jorge, n 80",
         "bairro": "George Américo",
