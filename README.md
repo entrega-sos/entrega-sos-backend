@@ -13,7 +13,7 @@ Os serviços Flask e Postgres rodam na porta 5000 e 5432, respectivamente.
 
 2. Instale o Git: ```sudo apt install git```
 
-3. Clone este repositório: ```git clone ```
+3. Clone este repositório: ```git clone https://github.com/entrega-sos/entrega-sos-backend.git```
 
 4. Entre no diretório: ```cd entrega-sos-backend/```
 
