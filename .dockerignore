@@ -1,0 +1,7 @@
+db/
+README.md
+__pycache__/
+.coverage
+.gitignore
+.pytest_cache/
+.vscode/

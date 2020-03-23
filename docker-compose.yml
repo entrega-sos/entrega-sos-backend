@@ -1,0 +1,35 @@
+version: "3.7"
+
+services:
+  db-entrega-sos-backend:
+    container_name: db-entrega-sos-backend
+    image: postgres:12.2-alpine
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+      - ./scripts/create-multiple-postgres-databases.sh:/docker-entrypoint-initdb.d/create-multiple-postgres-databases.sh
+    networks: 
+      - network-entrega-sos-backend
+    ports:
+      - "5432:5432"
+    env_file:
+      - ./.env
+  app-entrega-sos-backend:
+    container_name: app-entrega-sos-backend
+    build: .
+    restart: always
+    volumes:
+      - .:/usr/src/project
+    networks:
+      - network-entrega-sos-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - ENV_APP=${ENV_APP}
+    depends_on:
+      - db-entrega-sos-backend
+
+volumes:
+  postgres_data:
+networks:
+  network-entrega-sos-backend:
