@@ -58,7 +58,7 @@ def create_empresa():
 
 
 @api_v1.route('/empresas/<string:usuario>', methods=['GET'])
-@token_auth.login_required
+# @token_auth.login_required
 def get_empresa(usuario):
     empresa = Empresas.query.filter_by(usuario=usuario).first()
     if empresa == None: 
