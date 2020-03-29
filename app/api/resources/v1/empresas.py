@@ -5,6 +5,7 @@ from app.api.auth.empresas import basic_auth, token_auth
 from app.api.common import rest, errors
 from app.api.models import db
 from app.api.models.empresas import Empresas
+import uuid
 
 
 class SchemaJSON:
@@ -44,6 +45,7 @@ def create_empresa():
 
     empresa = Empresas()
     empresa.from_dict(data, new_user=True)
+    empresa.id = uuid.uuid4().hex
     
     db.session.add(empresa)
     db.session.commit()
@@ -65,7 +67,7 @@ def get_empresa(usuario):
 
 
 @api_v1.route('/empresas', methods=['GET'])
-@token_auth.login_required
+# @token_auth.login_required
 def get_all_empresas():
     page = request.args.get('page', 1, type=int)
     per_page = min(request.args.get('per_page', 10, type=int), 100)
