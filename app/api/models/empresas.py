@@ -5,7 +5,6 @@ from datetime import datetime, timedelta
 from werkzeug.security import check_password_hash, generate_password_hash
 from . import db
 
-
 class Empresas(db.Model):
     __tablename__ = 'empresas'
     id = db.Column(db.String(32), primary_key=True)
