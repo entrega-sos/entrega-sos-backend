@@ -78,24 +78,9 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
     }
     ```
 
-2. Obter token
-- Endpoint (POST): http://localhost:5000/v1/empresas/auth/token
-- Response:
-    ```JSON
-    {
-        "token": "seYladgufOiX8EsfKEK5b6vt7CPojv0h"
-    }
-    ```
-
-3. Revogar token
-- Endpoint (DELETE): http://localhost:5000/v1/empresas/auth/token
-- Configurar autenticação para **Bearer Token** e informar o respectivo token
-
-
-4. Consultar empresa pelo usuário
+2. Consultar empresa pelo usuário
 - Endpoint (GET): http://localhost:5000/v1/empresas/msc
     - Troque "msc" pelo respectivo usuário
-- Configurar autenticação para **Bearer Token** e informar o respectivo token
 - Response:
     ```JSON
     {
@@ -125,9 +110,8 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
     }
     ```
 
-5. Consultar todas as empresas
+3. Consultar todas as empresas
 - Endpoint (GET): http://localhost:5000/v1/empresas
-- Configurar autenticação para **Bearer Token** e informar o respectivo token
 - Response:
     ```JSON
     {
@@ -171,6 +155,19 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
         ]
     }
     ```
+    
+4. Obter token
+- Endpoint (POST): http://localhost:5000/v1/empresas/auth/token
+- Response:
+    ```JSON
+    {
+        "token": "seYladgufOiX8EsfKEK5b6vt7CPojv0h"
+    }
+    ```
+
+5. Revogar token
+- Endpoint (DELETE): http://localhost:5000/v1/empresas/auth/token
+- Configurar autenticação para **Bearer Token** e informar o respectivo token
 
 6. Alterar dados de uma empresa
 - Endpoint (PUT): http://localhost:5000/v1/empresas/msc
