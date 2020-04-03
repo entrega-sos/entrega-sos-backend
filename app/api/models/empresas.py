@@ -110,7 +110,3 @@ class Empresas(db.Model):
         if empresa is None or empresa.token_expiration < datetime.now():
             return None
         return empresa
-
-
-    def __repr__(self):
-        return f'<Empresa {self.id_empresa}>'

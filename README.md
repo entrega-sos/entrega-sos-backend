@@ -98,40 +98,7 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
     }
     ```
 
-**2. Consultar empresa pelo usuário**
-- Endpoint (GET): http://localhost:5000/v1/empresas/msc
-    - Troque "msc" pelo respectivo usuário
-- Response:
-    ```JSON
-    {
-        "id": "99602837a596498c85e214afb3a6f484",
-        "descricao": "Mercadinho Espaço da Carne",
-        "usuario": "msc",
-        "email": "msg@gmail.com",
-        "telefone": "7522220000",
-        "whatsapp": "7599991111",
-        "cep": "4444000",
-        "endereco": "Rua São Jorge, n 80",
-        "bairro": "George Américo",
-        "cidade": "Feira de Santana",
-        "uf": "BA",
-        "tipo_negocio": "Mercado",
-        "outro_negocio": "",
-        "meio_pagamento": [
-            "Dinheiro",
-            "Crédito",
-            "Débito"
-        ],
-        "dias_horarios": "Seg a Sex 8 as 18, Sab e Dom 8 as 12",
-        "delivery": true,
-        "instagram": "www.instagram.com/espaco_da_carne",
-        "facebook": "www.facebook.com/espaco_da_carne",
-        "site": "",
-        "obs": "Fazemos entrega somente no bairro George Americo"
-    }
-    ```
-
-**3. Consultar todas as empresas**
+**2. Consultar todas as empresas**
 - Endpoint (GET): http://localhost:5000/v1/empresas
 - Response:
     ```JSON
@@ -177,7 +144,66 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
         ]
     }
     ```
+
+**3. Consultar empresa pelo usuário**
+- Endpoint (GET): http://localhost:5000/v1/empresas/msc
+    - Troque "msc" pelo respectivo usuário
+- Response:
+    ```JSON
+    {
+        "id": "99602837a596498c85e214afb3a6f484",
+        "descricao": "Mercadinho Espaço da Carne",
+        "usuario": "msc",
+        "email": "msg@gmail.com",
+        "telefone": "7522220000",
+        "whatsapp": "7599991111",
+        "cep": "4444000",
+        "endereco": "Rua São Jorge, n 80",
+        "bairro": "George Américo",
+        "cidade": "Feira de Santana",
+        "uf": "BA",
+        "tipo_negocio": "Mercado",
+        "outro_negocio": "",
+        "meio_pagamento": [
+            "Dinheiro",
+            "Crédito",
+            "Débito"
+        ],
+        "dias_horarios": "Seg a Sex 8 as 18, Sab e Dom 8 as 12",
+        "delivery": true,
+        "instagram": "www.instagram.com/espaco_da_carne",
+        "facebook": "www.facebook.com/espaco_da_carne",
+        "site": "",
+        "obs": "Fazemos entrega somente no bairro George Americo"
+    }
+    ```
     
+**4. Consultar empresa por "group"**
+
+Por ```tipo_negocio```:
+- Endpoint (GET): http://localhost:5000/v1/empresas?group=tipo_negocio
+- Response:
+    ```JSON
+    {
+        "tipo_negocio": [
+            "Mercado",
+            "Farmácia"
+        ]
+    }
+    ```
+
+Por ```bairro```:
+- Endpoint (GET): http://localhost:5000/v1/empresas?group=bairro
+- Response:
+    ```JSON
+    {
+        "bairro": [
+            "Cidade Nova",
+            "George Américo"
+        ]
+    }
+    ```
+
 **4. Obter token**
 - Endpoint (POST): http://localhost:5000/v1/empresas/auth/token
 - Response:

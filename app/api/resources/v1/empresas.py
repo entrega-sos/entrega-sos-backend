@@ -58,6 +58,25 @@ def create_empresa():
     return response
 
 
+@api_v1.route('/empresas', methods=['GET'])
+def get_query_group():
+    group = request.args.get('group')
+
+    if group == 'tipo_negocio':
+        field_list = Empresas.query.with_entities(Empresas.tipo_negocio).distinct().all()
+    elif group == 'bairro':
+        field_list = Empresas.query.with_entities(Empresas.bairro).distinct().all()
+    else:
+        return errors.error_response(404, 'group inexistente')
+
+    group_list = {group: []}
+    for i in range(0,len(field_list)):
+        field = str(field_list[i]).replace("'", '').replace("(", '').replace(")", '').replace(",", '')
+        group_list[group].append(field)
+
+    return jsonify(group_list)
+
+
 @api_v1.route('/empresas/<string:usuario>', methods=['GET'])
 def get_empresa(usuario):
     empresa = Empresas.query.filter_by(usuario=usuario).first()
