@@ -59,22 +59,30 @@ def create_empresa():
 
 
 @api_v1.route('/empresas', methods=['GET'])
-def get_query_group():
-    group = request.args.get('group')
+def get_all_empresas():
+    if request.args.get('group'):
+        group = request.args.get('group')
 
-    if group == 'tipo_negocio':
-        field_list = Empresas.query.with_entities(Empresas.tipo_negocio).distinct().all()
-    elif group == 'bairro':
-        field_list = Empresas.query.with_entities(Empresas.bairro).distinct().all()
+        if group == 'tipo_negocio':
+            field_list = Empresas.query.with_entities(Empresas.tipo_negocio).distinct().all()
+        elif group == 'bairro':
+            field_list = Empresas.query.with_entities(Empresas.bairro).distinct().all()
+        else:
+            return errors.error_response(404, 'group inexistente')
+
+        group_list = {group: []}
+        for i in range(0,len(field_list)):
+            field = str(field_list[i]).replace("'", '').replace("(", '').replace(")", '').replace(",", '')
+            group_list[group].append(field)
+
+        return jsonify(group_list)
     else:
-        return errors.error_response(404, 'group inexistente')
-
-    group_list = {group: []}
-    for i in range(0,len(field_list)):
-        field = str(field_list[i]).replace("'", '').replace("(", '').replace(")", '').replace(",", '')
-        group_list[group].append(field)
-
-    return jsonify(group_list)
+        page = request.args.get('page', 1, type=int)
+        per_page = min(request.args.get('per_page', 10, type=int), 100)
+        data = rest.pagination(Empresas.query,
+                               page, per_page,
+                               'api_v1.get_all_empresas')
+        return jsonify(data)
 
 
 @api_v1.route('/empresas/<string:usuario>', methods=['GET'])
@@ -83,16 +91,6 @@ def get_empresa(usuario):
     if empresa == None: 
         return errors.error_response(404, 'usuário não encontrado')
     return jsonify(empresa.to_json())
-
-
-@api_v1.route('/empresas', methods=['GET'])
-def get_all_empresas():
-    page = request.args.get('page', 1, type=int)
-    per_page = min(request.args.get('per_page', 10, type=int), 100)
-    data = rest.pagination(Empresas.query,
-                           page, per_page,
-                           'api_v1.get_all_empresas')
-    return jsonify(data)
 
 
 @api_v1.route('/empresas/<string:usuario>', methods=['PUT'])
