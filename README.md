@@ -27,7 +27,8 @@ Os serviços Flask e Postgres rodam na porta 5000 e 5432, respectivamente.
 Instale o Insomnia ou equivalente: https://insomnia.rest/download/
 
 ### Bairros
-1. Consultar bairros (Feira de Santana-BA):
+
+**1. Consultar bairros (Feira de Santana-BA):**
 - Endpoint (GET): http://localhost:5000/v1/bairros
 - Response:
     ```JSON
@@ -40,6 +41,24 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
             "Baraúnas",
             "Bonfim de Feira",
             "Brasília",
+            ...
+        ]
+    }
+    ```
+
+### Tipos de Negócios
+
+**1. Consultar tipos de negócios:**
+- Endpoint (GET): http://localhost:5000/v1/tiposNegocios
+- Response:
+    ```JSON
+    {
+        "tipos_negocios": [
+            "Acessórios",
+            "Armarinho",
+            "Bar ou Lanchonete",
+            "Calçados",
+            "Farmácia",
             ...
         ]
     }
