@@ -204,7 +204,7 @@ Por ```bairro```:
     }
     ```
 
-**4. Obter token**
+**5. Obter token**
 - Endpoint (POST): http://localhost:5000/v1/empresas/auth/token
 - Response:
     ```JSON
@@ -213,11 +213,11 @@ Por ```bairro```:
     }
     ```
 
-**5. Revogar token**
+**6. Revogar token**
 - Endpoint (DELETE): http://localhost:5000/v1/empresas/auth/token
 - Configurar autenticação para **Bearer Token** e informar o respectivo token
 
-**6. Alterar dados de uma empresa**
+**7. Alterar dados de uma empresa**
 - Endpoint (PUT): http://localhost:5000/v1/empresas/msc
     - Troque "msc" pelo respectivo usuário
 - Configurar autenticação para **Bearer Token** e informar o respectivo token
@@ -258,7 +258,7 @@ Por ```bairro```:
     }
     ```
 
-**7. Deletar uma empresa**
+**8. Deletar uma empresa**
 - Endpoint (DELETE): http://localhost:5000/v1/empresas/msc
     - Troque "msc" pelo respectivo usuário
 - Configurar autenticação para **Bearer Token** e informar o respectivo token
