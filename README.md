@@ -47,7 +47,7 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
 
 ### Empresa
 
-1. Criar empresa
+**1. Criar empresa**
 - Endpoint (POST): http://localhost:5000/v1/empresas
 - Request:
     ```JSON
@@ -64,6 +64,7 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
         "cidade": "Feira de Santana",
         "uf": "BA",
         "tipo_negocio": "Mercado",
+        "outro_negocio": "",
         "meio_pagamento": [
             "Dinheiro",
             "Crédito",
@@ -78,7 +79,7 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
     }
     ```
 
-2. Consultar empresa pelo usuário
+**2. Consultar empresa pelo usuário**
 - Endpoint (GET): http://localhost:5000/v1/empresas/msc
     - Troque "msc" pelo respectivo usuário
 - Response:
@@ -96,6 +97,7 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
         "cidade": "Feira de Santana",
         "uf": "BA",
         "tipo_negocio": "Mercado",
+        "outro_negocio": "",
         "meio_pagamento": [
             "Dinheiro",
             "Crédito",
@@ -110,7 +112,7 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
     }
     ```
 
-3. Consultar todas as empresas
+**3. Consultar todas as empresas**
 - Endpoint (GET): http://localhost:5000/v1/empresas
 - Response:
     ```JSON
@@ -140,6 +142,7 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
                 "cidade": "Feira de Santana",
                 "uf": "BA",
                 "tipo_negocio": "Mercado",
+                "outro_negocio": "",
                 "meio_pagamento": [
                     "Dinheiro",
                     "Crédito",
@@ -156,7 +159,7 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
     }
     ```
     
-4. Obter token
+**4. Obter token**
 - Endpoint (POST): http://localhost:5000/v1/empresas/auth/token
 - Response:
     ```JSON
@@ -165,11 +168,11 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
     }
     ```
 
-5. Revogar token
+**5. Revogar token**
 - Endpoint (DELETE): http://localhost:5000/v1/empresas/auth/token
 - Configurar autenticação para **Bearer Token** e informar o respectivo token
 
-6. Alterar dados de uma empresa
+**6. Alterar dados de uma empresa**
 - Endpoint (PUT): http://localhost:5000/v1/empresas/msc
     - Troque "msc" pelo respectivo usuário
 - Configurar autenticação para **Bearer Token** e informar o respectivo token
@@ -195,6 +198,7 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
         "cidade": "Feira de Santana",
         "uf": "BA",
         "tipo_negocio": "Mercado",
+        "outro_negocio": "",
         "meio_pagamento": [
             "Dinheiro",
             "Crédito",
@@ -209,7 +213,7 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
     }
     ```
 
-7. Deletar uma empresa
+**7. Deletar uma empresa**
 - Endpoint (DELETE): http://localhost:5000/v1/empresas/msc
     - Troque "msc" pelo respectivo usuário
 - Configurar autenticação para **Bearer Token** e informar o respectivo token

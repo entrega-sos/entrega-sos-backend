@@ -24,6 +24,7 @@ class SchemaJSON:
             'cidade': {'type': 'string'},
             'uf': {'type': 'string'},
             'tipo_negocio': {'type': 'string'},
+            'outro_negocio': {'type': 'string'},
             'meio_pagamento': {'type': 'array'},
             'dias_horarios': {'type': 'string'},
             'delivery': {'type': 'boolean'},
@@ -58,7 +59,6 @@ def create_empresa():
 
 
 @api_v1.route('/empresas/<string:usuario>', methods=['GET'])
-# @token_auth.login_required
 def get_empresa(usuario):
     empresa = Empresas.query.filter_by(usuario=usuario).first()
     if empresa == None: 
@@ -67,7 +67,6 @@ def get_empresa(usuario):
 
 
 @api_v1.route('/empresas', methods=['GET'])
-# @token_auth.login_required
 def get_all_empresas():
     page = request.args.get('page', 1, type=int)
     per_page = min(request.args.get('per_page', 10, type=int), 100)

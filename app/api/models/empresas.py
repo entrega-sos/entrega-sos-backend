@@ -7,6 +7,7 @@ from . import db
 
 class Empresas(db.Model):
     __tablename__ = 'empresas'
+    
     id = db.Column(db.String(32), primary_key=True)
     data_criacao = db.Column(db.DateTime, default=datetime.now())
     descricao = db.Column(db.String())
@@ -21,6 +22,7 @@ class Empresas(db.Model):
     cidade = db.Column(db.String())
     uf = db.Column(db.String())
     tipo_negocio = db.Column(db.String())
+    outro_negocio = db.Column(db.String())
     meio_pagamento = db.Column(db.String())
     dias_horarios = db.Column(db.String())
     delivery = db.Column(db.Boolean())
@@ -31,8 +33,6 @@ class Empresas(db.Model):
     token = db.Column(db.String(32), unique=True)
     token_expiration = db.Column(db.DateTime)
 
-    def set_id(self):
-        return str(uuid.uuid4().hex)
 
     def set_password(self, senha):
         self.senha = generate_password_hash(senha)
@@ -49,9 +49,9 @@ class Empresas(db.Model):
         table = ['descricao', 'usuario', 'email', 
                  'telefone', 'whatsapp', 'cep',
                  'endereco', 'bairro', 'cidade',
-                 'uf', 'tipo_negocio', 'meio_pagamento',
-                 'dias_horarios', 'delivery', 'instagram',
-                 'facebook', 'site', 'obs',]
+                 'uf', 'tipo_negocio', 'outro_negocio',
+                 'meio_pagamento', 'dias_horarios', 'delivery',
+                 'instagram', 'facebook', 'site', 'obs',]
         for field in table:
             if field in data:
                 setattr(self, field, data[field])
@@ -74,6 +74,7 @@ class Empresas(db.Model):
             'cidade': self.cidade,
             'uf': self.uf,
             'tipo_negocio': self.tipo_negocio,
+            'outro_negocio': self.outro_negocio,
             'meio_pagamento': self.meio_pagamento.split(','),
             'dias_horarios': self.dias_horarios,
             'delivery': self.delivery,
