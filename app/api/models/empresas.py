@@ -30,6 +30,7 @@ class Empresas(db.Model):
     facebook = db.Column(db.String())
     site = db.Column(db.String())
     obs = db.Column(db.String())
+    admin = db.Column(db.Boolean())
     token = db.Column(db.String(32), unique=True)
     token_expiration = db.Column(db.DateTime)
 
@@ -51,7 +52,7 @@ class Empresas(db.Model):
                  'endereco', 'bairro', 'cidade',
                  'uf', 'tipo_negocio', 'outro_negocio',
                  'meio_pagamento', 'dias_horarios', 'delivery',
-                 'instagram', 'facebook', 'site', 'obs',]
+                 'instagram', 'facebook', 'site', 'obs', 'admin']
         for field in table:
             if field in data:
                 setattr(self, field, data[field])
@@ -81,7 +82,8 @@ class Empresas(db.Model):
             'instagram': self.instagram,
             'facebook': self.facebook,
             'site': self.site,
-            'obs': self.obs
+            'obs': self.obs,
+            'admin': self.admin
         }
         return data
 
@@ -93,7 +95,7 @@ class Empresas(db.Model):
             return self.token
 
         self.token = base64.b64encode(os.urandom(24)).decode('utf-8')
-        self.token_expiration = now + timedelta(seconds=3600)
+        self.token_expiration = now + timedelta(days=365)
 
         db.session.add(self)
         return self.token

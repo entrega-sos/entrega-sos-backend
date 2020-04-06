@@ -31,9 +31,10 @@ class SchemaJSON:
             'instagram': {'type': 'string'},
             'facebook': {'type': 'string'},
             'site': {'type': 'string'},
-            'obs': {'type': 'string'}
+            'obs': {'type': 'string'},
+            'admin': {'type': 'boolean'}
         },
-        'required': ['descricao', 'usuario', 'senha']
+        'required': ['descricao', 'usuario', 'senha', 'admin']
     }
 
 
