@@ -26,6 +26,24 @@ Os serviços Flask e Postgres rodam na porta 5000 e 5432, respectivamente.
 
 Instale o Insomnia ou equivalente: https://insomnia.rest/download/
 
+### Cidades
+
+**1. Consultar cidades:**
+- Endpoint (GET): http://localhost:5000/v1/cidades
+- Response:
+    ```JSON
+    {
+        "cidades": [
+            "Brumado",
+            "Feira de Santana",
+            "Guanambi",
+            "Jequié",
+            "Salvador",
+            "Santo Antônio de Jesus"
+        ]
+    }
+    ```
+
 ### Bairros
 
 **1. Consultar bairros (Feira de Santana-BA):**
@@ -94,7 +112,8 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
         "instagram": "www.instagram.com/espaco_da_carne",
         "facebook": "www.facebook.com/espaco_da_carne",
         "site": "",
-        "obs": "Fazemos entrega somente no bairro George Americo"
+        "obs": "Fazemos entrega somente no bairro George Americo",
+        "admin": true
     }
     ```
 
@@ -139,7 +158,8 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
                 "instagram": "www.instagram.com/espaco_da_carne",
                 "facebook": "www.facebook.com/espaco_da_carne",
                 "site": "",
-                "obs": "Fazemos entrega somente no bairro George Americo"
+                "obs": "Fazemos entrega somente no bairro George Americo",
+                "admin": true
             }
         ]
     }
@@ -174,11 +194,25 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
         "instagram": "www.instagram.com/espaco_da_carne",
         "facebook": "www.facebook.com/espaco_da_carne",
         "site": "",
-        "obs": "Fazemos entrega somente no bairro George Americo"
+        "obs": "Fazemos entrega somente no bairro George Americo",
+        "admin": true
     }
     ```
     
 **4. Consultar empresa por "group"**
+
+Por ```cidade```:
+- Endpoint (GET): http://localhost:5000/v1/empresas?group=cidade
+- Response:
+    ```JSON
+    {
+        "cidade": [
+            "Feira de Santana",
+            "Guanambi",
+            "Jequié"
+        ]
+    }
+    ```
 
 Por ```tipo_negocio```:
 - Endpoint (GET): http://localhost:5000/v1/empresas?group=tipo_negocio
