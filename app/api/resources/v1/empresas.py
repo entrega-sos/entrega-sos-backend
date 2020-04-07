@@ -78,6 +78,20 @@ def get_all_empresas():
             field = str(field_list[i]).replace("'", '').replace("(", '').replace(")", '').replace(",", '')
             group_list[group].append(field)
 
+        if request.args.get('filter'):
+            fil = request.args.get('filter')
+        if group == 'cidade' and fil == 'tipo_negocio':
+            group_list_filter = {}
+            for i in range(len(group_list[group])):
+                cidade = group_list[group][i]
+                tipo_negocio = Empresas.query.with_entities(Empresas.tipo_negocio).filter(Empresas.cidade==cidade).distinct().all()
+
+                group_list_filter[cidade] = []
+                for i in range(len(tipo_negocio)):                    
+                    print(tipo_negocio[i])
+                    group_list_filter[cidade].append(tipo_negocio[i][0])
+            return jsonify(group_list_filter)
+
         return jsonify(group_list)
     else:
         page = request.args.get('page', 1, type=int)
