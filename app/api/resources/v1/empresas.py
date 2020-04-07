@@ -66,6 +66,8 @@ def get_all_empresas():
 
         if group == 'tipo_negocio':
             field_list = Empresas.query.with_entities(Empresas.tipo_negocio).distinct().all()
+        elif group == 'cidade':
+            field_list = Empresas.query.with_entities(Empresas.cidade).distinct().all()
         elif group == 'bairro':
             field_list = Empresas.query.with_entities(Empresas.bairro).distinct().all()
         else:
