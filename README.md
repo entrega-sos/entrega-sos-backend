@@ -288,7 +288,8 @@ Por ```bairro```:
         "instagram": "www.instagram.com/espaco_da_carne",
         "facebook": "www.facebook.com/espaco_da_carne",
         "site": "",
-        "obs": "Fazemos entrega somente no bairro George Americo"
+        "obs": "Fazemos entrega somente no bairro George Americo",
+        "admin": true
     }
     ```
 
