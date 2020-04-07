@@ -238,6 +238,30 @@ Por ```bairro```:
     }
     ```
 
+Por ```cidade``` com filter para ```tipo_negocio```:
+- Endpoint (GET): http://localhost:5000/v1/empresas?group=cidade&filter=tipo_negocio
+- Response:
+    ```JSON
+    {
+        "Feira de Santana": [
+            "Farmácia",
+            "Lanchonete",
+            "Mercado"
+        ],
+        "Guanambi": [
+            "Bazar",
+            "Lanchonete"
+        ],
+        "Salvador": [
+            "Bar",
+            "Farmácia",
+            "Lanchonete",
+            "Mercado",
+            "Serviços"
+        ]
+    }
+    ```
+
 **5. Obter token**
 - Endpoint (POST): http://localhost:5000/v1/empresas/auth/token
 - Response:
