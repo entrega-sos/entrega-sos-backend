@@ -24,10 +24,6 @@ def create_app():
     from app.api.resources.v1 import api_v1
     app.register_blueprint(api_v1, url_prefix='/v1')
 
-    @app.route('/', methods=['GET'])
-    def hello_world():
-        return jsonify({'message' : 'hello, world!'})
-
     return app
 
 
