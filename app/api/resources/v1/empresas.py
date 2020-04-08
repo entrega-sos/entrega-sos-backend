@@ -78,6 +78,7 @@ def get_all_empresas():
             field = str(field_list[i]).replace("'", '').replace("(", '').replace(")", '').replace(",", '')
             group_list[group].append(field)
 
+        fil = ''
         if request.args.get('filter'):
             fil = request.args.get('filter')
         if group == 'cidade' and fil == 'tipo_negocio':
