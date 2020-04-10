@@ -27,6 +27,7 @@ tipos_negocios = [
     'Marmita/Quentinha',
     'Mercado',
     'Mercearia',
+    'Móveis',
     'Padaria',
     'Páscoa/Chocolates',
     'Pizzaria',
