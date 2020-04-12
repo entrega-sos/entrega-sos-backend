@@ -32,6 +32,7 @@ tipos_negocios = [
     'Páscoa/Chocolates',
     'Pizzaria',
     'Restaurante',
+    'São João',
     'Saúde',
     'Serviços',
     'Vestuário',
