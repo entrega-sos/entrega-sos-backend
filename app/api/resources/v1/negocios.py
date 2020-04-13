@@ -2,6 +2,8 @@ from flask import jsonify
 from . import api_v1
 
 tipos_negocios = [
+    'Álcool em Gel',
+    'Máscaras',
     'Açaí',
     'Acessórios',
     'Armarinho',
