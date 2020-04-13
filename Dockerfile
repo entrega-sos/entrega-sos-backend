@@ -14,7 +14,7 @@ RUN apk add gcc musl-dev postgresql-dev python3-dev bash
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-EXPOSE 5000
+EXPOSE 80
 
 RUN chmod +x ./scripts/docker-entrypoint.sh
 ENTRYPOINT ["./scripts/docker-entrypoint.sh"]

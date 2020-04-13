@@ -12,4 +12,4 @@ while true; do
     sleep 5
 done
 
-exec gunicorn --workers=4 --bind 0.0.0.0:5000 wsgi:app --reload --access-logfile - --error-logfile - --timeout 120 --keep-alive 30
+exec gunicorn --workers=4 --bind 0.0.0.0:80 wsgi:app --reload --access-logfile - --error-logfile - --timeout 120 --keep-alive 30
