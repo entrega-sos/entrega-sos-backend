@@ -1,9 +1,11 @@
-# Entrega SOS - Back-end
+# **Entrega SOS - Back-end**
 
 API REST desenvolvida com Python/Flask, Postgres e Docker.
 
+### **Importante**:
+*Devido à urgência e tempo limitado dos voluntários, o projeto como um todo (back/front) foi desenvolvido "a toque de caixa" e precisa receber determinados ajustes, então contribuições são muito bem-vindas!*
 
-## Configuração do Ambiente
+## **Configuração do Ambiente**
 
 Os serviços Flask e Postgres rodam na porta 5000 e 5432, respectivamente.
 
@@ -22,11 +24,11 @@ Os serviços Flask e Postgres rodam na porta 5000 e 5432, respectivamente.
 6. Execute (CTRL+C para exit): ```export ENV_APP=development ; docker-compose up```
 
 
-## Executando a Aplicação
+## **Executando a Aplicação**
 
 Instale o Insomnia ou equivalente: https://insomnia.rest/download/
 
-### Cidades
+### **Cidades**
 
 **1. Consultar cidades:**
 - Endpoint (GET): http://localhost:5000/v1/cidades
@@ -44,7 +46,7 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
     }
     ```
 
-### Bairros
+### **Bairros**
 
 **1. Consultar bairros (Feira de Santana-BA):**
 - Endpoint (GET): http://localhost:5000/v1/bairros
@@ -64,7 +66,7 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
     }
     ```
 
-### Tipos de Negócios
+### **Tipos de Negócios**
 
 **1. Consultar tipos de negócios:**
 - Endpoint (GET): http://localhost:5000/v1/tiposNegocios
@@ -82,7 +84,7 @@ Instale o Insomnia ou equivalente: https://insomnia.rest/download/
     }
     ```
 
-### Empresa
+### **Empresa**
 
 **1. Criar empresa**
 - Endpoint (POST): http://localhost:5000/v1/empresas

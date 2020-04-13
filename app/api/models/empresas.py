@@ -82,8 +82,8 @@ class Empresas(db.Model):
             'instagram': self.instagram,
             'facebook': self.facebook,
             'site': self.site,
-            'obs': self.obs,
-            'admin': self.admin
+            'obs': self.obs
+            # 'admin': self.admin
         }
         return data
 

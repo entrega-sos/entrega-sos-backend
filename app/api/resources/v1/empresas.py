@@ -106,7 +106,7 @@ def get_all_empresas():
 @api_v1.route('/empresas/<string:usuario>', methods=['GET'])
 def get_empresa(usuario):
     empresa = Empresas.query.filter_by(usuario=usuario).first()
-    if empresa == None: 
+    if empresa == None or empresa.admin == True:
         return errors.error_response(404, 'usuário não encontrado')
     return jsonify(empresa.to_json())
 
@@ -146,6 +146,19 @@ def delete_empresa(usuario):
     db.session.delete(empresa)
     db.session.commit()
     return make_response('', 204)
+
+
+# Rota de login temporária
+@api_v1.route('/empresas/login/<string:usuario>', methods=['GET'])
+def login_empresa(usuario):
+    empresa = Empresas.query.filter_by(usuario=usuario).first()
+    if empresa == None:
+        return errors.error_response(404, 'usuário não encontrado')
+    else:
+        if empresa.admin == True:
+            return jsonify({'login': True})
+        else:
+            return jsonify({'login': False})
 
 
 @api_v1.route('/empresas/auth/token', methods=['POST'])
