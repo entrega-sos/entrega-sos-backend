@@ -5,6 +5,9 @@ API REST desenvolvida com Python/Flask, Postgres e Docker.
 ### **Importante**:
 *Devido à urgência e tempo limitado dos voluntários, o projeto como um todo (back/front) foi desenvolvido "a toque de caixa" e precisa receber determinados ajustes, então contribuições são muito bem-vindas!*
 
+*Conheça mais sobre o projeto:
+https://www.acordacidade.com.br/noticias/225389/entrega-sos-e-a-nova-plataforma-de-delivery-gratuita-para-comerciantes-de-feira.html*
+
 ## **Configuração do Ambiente**
 
 Os serviços Flask e Postgres rodam na porta 5000 e 5432, respectivamente.
