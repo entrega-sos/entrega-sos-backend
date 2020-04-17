@@ -326,3 +326,13 @@ Por ```cidade``` com filter para ```tipo_negocio```:
 - Endpoint (DELETE): http://localhost:5000/v1/empresas/msc
     - Troque "msc" pelo respectivo usuário
 - Configurar autenticação para **Bearer Token** e informar o respectivo token
+
+
+## **Migrations**
+
+As migrations são executadas com Flask-Migrate.
+
+1. Crie uma virtualenv: ```python3 -m virtualenv .venv && source .venv/bin/activate```
+2. Se o diretório "migrations" não existir no projeto: ```python3 manage.py db init```
+3. Para criar as migrations: ```python3 manage.py db migrate```
+4. Exportar para o Postgres: ```python3 manage.py db upgrade```
