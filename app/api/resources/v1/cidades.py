@@ -7,7 +7,8 @@ cidades = [
     'Guanambi',
     'Jequié',
     'Salvador',
-    'Santo Antônio de Jesus'
+    'Santo Antônio de Jesus',
+    'Simões Filho'
 ]
 
 
