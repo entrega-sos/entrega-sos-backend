@@ -26,6 +26,7 @@ tipos_negocios = [
     'Fitness',
     'Frutos do mar',
     'Informática',
+    'Joias',
     'Lanchonete',
     'Manicure/Pedicure',
     'Marmita/Quentinha',
