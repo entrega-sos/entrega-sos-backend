@@ -11,6 +11,7 @@ tipos_negocios = [
     'Bar',
     'Barbearia',
     'Bazar',
+    'Bebês',
     'Bebidas',
     'Calçados',
     'Celulares',
