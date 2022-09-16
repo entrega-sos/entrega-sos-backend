@@ -12,7 +12,7 @@ gunicorn==20.0.4
 itsdangerous==1.1.0
 Jinja2==2.11.1
 jsonschema==3.2.0
-Mako==1.1.2
+Mako==1.2.2
 MarkupSafe==1.1.1
 psycopg2==2.8.4
 pyrsistent==0.15.7
